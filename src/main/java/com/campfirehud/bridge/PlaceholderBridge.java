@@ -2,6 +2,7 @@ package com.campfirehud.bridge;
 
 import com.campfirehud.CampfireHUD;
 import me.clip.placeholderapi.PlaceholderAPI;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Criteria;
@@ -35,7 +36,7 @@ public class PlaceholderBridge {
 
             Objective obj = board.getObjective(objName);
             if (obj == null) {
-                obj = board.registerNewObjective(objName, Criteria.DUMMY, key);
+                obj = board.registerNewObjective(objName, Criteria.DUMMY, Component.text(key));
             }
             obj.getScore(player.getName()).setScore(value);
         }

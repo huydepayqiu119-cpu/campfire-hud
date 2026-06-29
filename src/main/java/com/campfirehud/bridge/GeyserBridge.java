@@ -46,17 +46,35 @@ public class GeyserBridge {
                         + " food=" + player.getFoodLevel()
                         + " armor=" + (int) getArmorValue(player)
                         + " air=" + player.getRemainingAir() + "/" + player.getMaximumAir()
+                        + " xp=" + String.format("%.2f", player.getExp())
+                        + " xpLv=" + player.getLevel()
                     );
                 }
             }
 
-            sendScorePackets(player, connection);
+            // Send XP packet separately — Geyser may override attribute-based XP
+            Object xpPacket = buildXpPacket(player);
+            if (xpPacket != null) {
+                sendUpstreamPacketMethod.invoke(connection, xpPacket);
+            }
 
         } catch (Exception e) {
             if (CampfireHUD.getInstance().getConfig().getBoolean("debug", false)) {
                 CampfireHUD.getInstance().getLogger().warning(
                     "[CampfireHUD] pushStats failed for " + player.getName() + ": " + e.getMessage());
             }
+        }
+    }
+
+    private static Object buildXpPacket(Player player) {
+        try {
+            Class<?> packetClass = Class.forName(
+                "org.cloudburstmc.protocol.bedrock.packet.SetPlayerGameTypePacket");
+            // Use UpdateAttributesPacket for XP — already included in buildUpdateAttributesPacket
+            // This is a no-op placeholder; XP is sent via minecraft:player.experience attribute
+            return null;
+        } catch (Exception e) {
+            return null;
         }
     }
 
@@ -148,7 +166,7 @@ public class GeyserBridge {
             int    air       = player.getRemainingAir();
             int    maxAir    = player.getMaximumAir();
             float  airScaled = maxAir > 0 ? ((float) air / maxAir) * 300f : 300f;
-            float  xpProgress = player.getExp();
+            float  xpProgress = Math.max(0f, Math.min(1f, player.getExp()));
             int    xpLevel   = player.getLevel();
             float  xpTotal   = player.getTotalExperience();
 

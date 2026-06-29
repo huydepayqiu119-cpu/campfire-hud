@@ -15,7 +15,3 @@ messages:
 placeholders:
   balance: '%vault_eco_balance%'
   level:   '%player_level%'
-  health:  '%player_health%'
-  food:    '%player_foodlevel%'
-  armor:   '%player_armor%'
-  air:     '%player_air%'

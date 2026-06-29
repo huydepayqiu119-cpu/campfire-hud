@@ -1,17 +1,17 @@
 package com.campfirehud.listeners;
 
 import com.campfirehud.bridge.GeyserBridge;
+import com.campfirehud.bridge.PlaceholderBridge;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.geysermc.geyser.api.GeyserApi;
 
 public class PlayerJoinListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         var player = event.getPlayer();
-        if (!GeyserApi.api().isBedrockPlayer(player.getUniqueId())) return;
-        GeyserBridge.pushStats(player);
+        if (!GeyserBridge.isBedrockPlayer(player)) return;
+        PlaceholderBridge.push(player);
     }
 }

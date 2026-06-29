@@ -11,6 +11,7 @@ public class StatsSyncTask implements Runnable {
     public void run() {
         for (Player player : Bukkit.getOnlinePlayers()) {
             if (!GeyserBridge.isBedrockPlayer(player)) continue;
+            GeyserBridge.pushStats(player);
             PlaceholderBridge.push(player);
         }
     }

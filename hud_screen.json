@@ -58,40 +58,30 @@
         "money_text_label": {
           "type": "label",
           "layer": 102,
-          "text": "#text",
+          "text": "%%",
           "shadow": true,
           "anchor_from": "center",
           "anchor_to": "center",
-          "offset": [0, -9],
-          "font_size": "normal",
-          "bindings": [
-            {
-              "binding_name": "#score_balance",
-              "binding_name_override": "#text",
-              "binding_type": "global",
-              "binding_condition": "always"
-            }
-          ]
+          "offset": [
+            0,
+            -9
+          ],
+          "font_size": "normal"
         }
       },
       {
         "level_text_label": {
           "type": "label",
           "layer": 102,
-          "text": "#text",
+          "text": "%player_level%",
           "shadow": true,
           "anchor_from": "center",
           "anchor_to": "center",
-          "offset": [0, 0],
-          "font_size": "normal",
-          "bindings": [
-            {
-              "binding_name": "#score_level",
-              "binding_name_override": "#text",
-              "binding_type": "global",
-              "binding_condition": "always"
-            }
-          ]
+          "offset": [
+            0,
+            0
+          ],
+          "font_size": "normal"
         }
       }
     ]
@@ -114,10 +104,19 @@
         "armor_1": {
           "type": "image",
           "texture": "textures/kingdom_hud/armor_bar/1",
-          "size": [ 6, 7 ],
+          "size": [
+            6,
+            7
+          ],
           "bindings": [
-            { "binding_name": "#score_armor", "binding_type": "global" },
-            { "binding_name": "(#score_armor > 0 and #score_armor <= 2)", "binding_name_override": "#visible", "binding_condition": "always" }
+            {
+              "binding_name": "#armor",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#armor > 0 and #armor <= 2)",
+              "binding_name_override": "#visible"
+            }
           ]
         }
       },
@@ -125,10 +124,19 @@
         "armor_2": {
           "type": "image",
           "texture": "textures/kingdom_hud/armor_bar/2",
-          "size": [ 12, 7 ],
+          "size": [
+            12,
+            7
+          ],
           "bindings": [
-            { "binding_name": "#score_armor", "binding_type": "global" },
-            { "binding_name": "(#score_armor > 2 and #score_armor <= 4)", "binding_name_override": "#visible", "binding_condition": "always" }
+            {
+              "binding_name": "#armor",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#armor > 2 and #armor <= 4)",
+              "binding_name_override": "#visible"
+            }
           ]
         }
       },
@@ -136,10 +144,19 @@
         "armor_3": {
           "type": "image",
           "texture": "textures/kingdom_hud/armor_bar/3",
-          "size": [ 18, 7 ],
+          "size": [
+            18,
+            7
+          ],
           "bindings": [
-            { "binding_name": "#score_armor", "binding_type": "global" },
-            { "binding_name": "(#score_armor > 4 and #score_armor <= 6)", "binding_name_override": "#visible", "binding_condition": "always" }
+            {
+              "binding_name": "#armor",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#armor > 4 and #armor <= 6)",
+              "binding_name_override": "#visible"
+            }
           ]
         }
       },
@@ -147,10 +164,19 @@
         "armor_4": {
           "type": "image",
           "texture": "textures/kingdom_hud/armor_bar/4",
-          "size": [ 24, 7 ],
+          "size": [
+            24,
+            7
+          ],
           "bindings": [
-            { "binding_name": "#score_armor", "binding_type": "global" },
-            { "binding_name": "(#score_armor > 6 and #score_armor <= 8)", "binding_name_override": "#visible", "binding_condition": "always" }
+            {
+              "binding_name": "#armor",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#armor > 6 and #armor <= 8)",
+              "binding_name_override": "#visible"
+            }
           ]
         }
       },
@@ -158,10 +184,19 @@
         "armor_5": {
           "type": "image",
           "texture": "textures/kingdom_hud/armor_bar/5",
-          "size": [ 30, 7 ],
+          "size": [
+            30,
+            7
+          ],
           "bindings": [
-            { "binding_name": "#score_armor", "binding_type": "global" },
-            { "binding_name": "(#score_armor > 8 and #score_armor <= 10)", "binding_name_override": "#visible", "binding_condition": "always" }
+            {
+              "binding_name": "#armor",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#armor > 8 and #armor <= 10)",
+              "binding_name_override": "#visible"
+            }
           ]
         }
       },
@@ -169,10 +204,19 @@
         "armor_6": {
           "type": "image",
           "texture": "textures/kingdom_hud/armor_bar/6",
-          "size": [ 36, 7 ],
+          "size": [
+            36,
+            7
+          ],
           "bindings": [
-            { "binding_name": "#score_armor", "binding_type": "global" },
-            { "binding_name": "(#score_armor > 10 and #score_armor <= 12)", "binding_name_override": "#visible", "binding_condition": "always" }
+            {
+              "binding_name": "#armor",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#armor > 10 and #armor <= 12)",
+              "binding_name_override": "#visible"
+            }
           ]
         }
       },
@@ -180,10 +224,19 @@
         "armor_7": {
           "type": "image",
           "texture": "textures/kingdom_hud/armor_bar/7",
-          "size": [ 42, 7 ],
+          "size": [
+            42,
+            7
+          ],
           "bindings": [
-            { "binding_name": "#score_armor", "binding_type": "global" },
-            { "binding_name": "(#score_armor > 12 and #score_armor <= 14)", "binding_name_override": "#visible", "binding_condition": "always" }
+            {
+              "binding_name": "#armor",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#armor > 12 and #armor <= 14)",
+              "binding_name_override": "#visible"
+            }
           ]
         }
       },
@@ -191,10 +244,19 @@
         "armor_8": {
           "type": "image",
           "texture": "textures/kingdom_hud/armor_bar/8",
-          "size": [ 48, 7 ],
+          "size": [
+            48,
+            7
+          ],
           "bindings": [
-            { "binding_name": "#score_armor", "binding_type": "global" },
-            { "binding_name": "(#score_armor > 14 and #score_armor <= 16)", "binding_name_override": "#visible", "binding_condition": "always" }
+            {
+              "binding_name": "#armor",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#armor > 14 and #armor <= 16)",
+              "binding_name_override": "#visible"
+            }
           ]
         }
       },
@@ -202,10 +264,19 @@
         "armor_9": {
           "type": "image",
           "texture": "textures/kingdom_hud/armor_bar/9",
-          "size": [ 54, 7 ],
+          "size": [
+            54,
+            7
+          ],
           "bindings": [
-            { "binding_name": "#score_armor", "binding_type": "global" },
-            { "binding_name": "(#score_armor > 16 and #score_armor <= 18)", "binding_name_override": "#visible", "binding_condition": "always" }
+            {
+              "binding_name": "#armor",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#armor > 16 and #armor <= 18)",
+              "binding_name_override": "#visible"
+            }
           ]
         }
       },
@@ -213,10 +284,19 @@
         "armor_10": {
           "type": "image",
           "texture": "textures/kingdom_hud/armor_bar/10",
-          "size": [ 60, 7 ],
+          "size": [
+            60,
+            7
+          ],
           "bindings": [
-            { "binding_name": "#score_armor", "binding_type": "global" },
-            { "binding_name": "(#score_armor > 18)", "binding_name_override": "#visible", "binding_condition": "always" }
+            {
+              "binding_name": "#armor",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#armor > 18)",
+              "binding_name_override": "#visible"
+            }
           ]
         }
       }
@@ -224,62 +304,650 @@
   },
   "custom_air_panel": {
     "type": "panel",
-    "size": [ 60, 6 ],
+    "size": [
+      60,
+      6
+    ],
     "layer": 101,
     "anchor_from": "bottom_left",
     "anchor_to": "bottom_left",
-    "offset": [ 57.5, -40.6 ],
+    "offset": [
+      57.5,
+      -40.6
+    ],
     "controls": [
-      { "air_1":  { "type": "image", "texture": "textures/kingdom_hud/air_bar/1",  "size": [6,6],  "bindings": [{"binding_name":"#score_air","binding_type":"global"},{"binding_name":"(#score_air > 0 and #score_air <= 2)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "air_2":  { "type": "image", "texture": "textures/kingdom_hud/air_bar/2",  "size": [12,6], "bindings": [{"binding_name":"#score_air","binding_type":"global"},{"binding_name":"(#score_air > 2 and #score_air <= 4)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "air_3":  { "type": "image", "texture": "textures/kingdom_hud/air_bar/3",  "size": [18,6], "bindings": [{"binding_name":"#score_air","binding_type":"global"},{"binding_name":"(#score_air > 4 and #score_air <= 6)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "air_4":  { "type": "image", "texture": "textures/kingdom_hud/air_bar/4",  "size": [24,6], "bindings": [{"binding_name":"#score_air","binding_type":"global"},{"binding_name":"(#score_air > 6 and #score_air <= 8)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "air_5":  { "type": "image", "texture": "textures/kingdom_hud/air_bar/5",  "size": [30,6], "bindings": [{"binding_name":"#score_air","binding_type":"global"},{"binding_name":"(#score_air > 8 and #score_air <= 10)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "air_6":  { "type": "image", "texture": "textures/kingdom_hud/air_bar/6",  "size": [36,6], "bindings": [{"binding_name":"#score_air","binding_type":"global"},{"binding_name":"(#score_air > 10 and #score_air <= 12)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "air_7":  { "type": "image", "texture": "textures/kingdom_hud/air_bar/7",  "size": [42,6], "bindings": [{"binding_name":"#score_air","binding_type":"global"},{"binding_name":"(#score_air > 12 and #score_air <= 14)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "air_8":  { "type": "image", "texture": "textures/kingdom_hud/air_bar/8",  "size": [48,6], "bindings": [{"binding_name":"#score_air","binding_type":"global"},{"binding_name":"(#score_air > 14 and #score_air <= 16)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "air_9":  { "type": "image", "texture": "textures/kingdom_hud/air_bar/9",  "size": [54,6], "bindings": [{"binding_name":"#score_air","binding_type":"global"},{"binding_name":"(#score_air > 16 and #score_air <= 18)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "air_10": { "type": "image", "texture": "textures/kingdom_hud/air_bar/10", "size": [60,6], "bindings": [{"binding_name":"#score_air","binding_type":"global"},{"binding_name":"(#score_air > 18)","binding_name_override":"#visible","binding_condition":"always"}] } }
+      {
+        "air_1": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/air_bar/1",
+          "size": [
+            6,
+            6
+          ],
+          "bindings": [
+            {
+              "binding_name": "#air",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#air > 0 and #air <= 2)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "air_2": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/air_bar/2",
+          "size": [
+            12,
+            6
+          ],
+          "bindings": [
+            {
+              "binding_name": "#air",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#air > 2 and #air <= 4)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "air_3": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/air_bar/3",
+          "size": [
+            18,
+            6
+          ],
+          "bindings": [
+            {
+              "binding_name": "#air",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#air > 4 and #air <= 6)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "air_4": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/air_bar/4",
+          "size": [
+            24,
+            6
+          ],
+          "bindings": [
+            {
+              "binding_name": "#air",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#air > 6 and #air <= 8)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "air_5": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/air_bar/5",
+          "size": [
+            30,
+            6
+          ],
+          "bindings": [
+            {
+              "binding_name": "#air",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#air > 8 and #air <= 10)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "air_6": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/air_bar/6",
+          "size": [
+            36,
+            6
+          ],
+          "bindings": [
+            {
+              "binding_name": "#air",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#air > 10 and #air <= 12)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "air_7": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/air_bar/7",
+          "size": [
+            42,
+            6
+          ],
+          "bindings": [
+            {
+              "binding_name": "#air",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#air > 12 and #air <= 14)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "air_8": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/air_bar/8",
+          "size": [
+            48,
+            6
+          ],
+          "bindings": [
+            {
+              "binding_name": "#air",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#air > 14 and #air <= 16)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "air_9": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/air_bar/9",
+          "size": [
+            54,
+            6
+          ],
+          "bindings": [
+            {
+              "binding_name": "#air",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#air > 16 and #air <= 18)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "air_10": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/air_bar/10",
+          "size": [
+            60,
+            6
+          ],
+          "bindings": [
+            {
+              "binding_name": "#air",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#air > 18)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
     ]
   },
   "custom_health_panel": {
     "type": "panel",
-    "size": [ 55, 3 ],
+    "size": [
+      55,
+      3
+    ],
     "layer": 101,
     "anchor_from": "bottom_left",
     "anchor_to": "bottom_left",
-    "offset": [ -20.5, -35.5 ],
+    "offset": [
+      -20.5,
+      -35.5
+    ],
     "controls": [
-      { "health_1":  { "type": "image", "texture": "textures/kingdom_hud/hp_bar/1",  "size": [5,3],  "bindings": [{"binding_name":"#score_health","binding_type":"global"},{"binding_name":"(#score_health > 0 and #score_health <= 2)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "health_2":  { "type": "image", "texture": "textures/kingdom_hud/hp_bar/2",  "size": [11,3], "bindings": [{"binding_name":"#score_health","binding_type":"global"},{"binding_name":"(#score_health > 2 and #score_health <= 4)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "health_3":  { "type": "image", "texture": "textures/kingdom_hud/hp_bar/3",  "size": [16,3], "bindings": [{"binding_name":"#score_health","binding_type":"global"},{"binding_name":"(#score_health > 4 and #score_health <= 6)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "health_4":  { "type": "image", "texture": "textures/kingdom_hud/hp_bar/4",  "size": [22,3], "bindings": [{"binding_name":"#score_health","binding_type":"global"},{"binding_name":"(#score_health > 6 and #score_health <= 8)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "health_5":  { "type": "image", "texture": "textures/kingdom_hud/hp_bar/5",  "size": [27,3], "bindings": [{"binding_name":"#score_health","binding_type":"global"},{"binding_name":"(#score_health > 8 and #score_health <= 10)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "health_6":  { "type": "image", "texture": "textures/kingdom_hud/hp_bar/6",  "size": [33,3], "bindings": [{"binding_name":"#score_health","binding_type":"global"},{"binding_name":"(#score_health > 10 and #score_health <= 12)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "health_7":  { "type": "image", "texture": "textures/kingdom_hud/hp_bar/7",  "size": [38,3], "bindings": [{"binding_name":"#score_health","binding_type":"global"},{"binding_name":"(#score_health > 12 and #score_health <= 14)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "health_8":  { "type": "image", "texture": "textures/kingdom_hud/hp_bar/8",  "size": [44,3], "bindings": [{"binding_name":"#score_health","binding_type":"global"},{"binding_name":"(#score_health > 14 and #score_health <= 16)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "health_9":  { "type": "image", "texture": "textures/kingdom_hud/hp_bar/9",  "size": [49,3], "bindings": [{"binding_name":"#score_health","binding_type":"global"},{"binding_name":"(#score_health > 16 and #score_health <= 18)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "health_10": { "type": "image", "texture": "textures/kingdom_hud/hp_bar/10", "size": [55,3], "bindings": [{"binding_name":"#score_health","binding_type":"global"},{"binding_name":"(#score_health > 18)","binding_name_override":"#visible","binding_condition":"always"}] } }
+      {
+        "health_1": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/hp_bar/1",
+          "size": [
+            5,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#health",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#health > 0 and #health <= 2)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "health_2": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/hp_bar/2",
+          "size": [
+            11,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#health",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#health > 2 and #health <= 4)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "health_3": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/hp_bar/3",
+          "size": [
+            16,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#health",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#health > 4 and #health <= 6)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "health_4": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/hp_bar/4",
+          "size": [
+            22,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#health",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#health > 6 and #health <= 8)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "health_5": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/hp_bar/5",
+          "size": [
+            27,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#health",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#health > 8 and #health <= 10)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "health_6": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/hp_bar/6",
+          "size": [
+            33,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#health",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#health > 10 and #health <= 12)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "health_7": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/hp_bar/7",
+          "size": [
+            38,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#health",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#health > 12 and #health <= 14)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "health_8": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/hp_bar/8",
+          "size": [
+            44,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#health",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#health > 14 and #health <= 16)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "health_9": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/hp_bar/9",
+          "size": [
+            49,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#health",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#health > 16 and #health <= 18)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "health_10": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/hp_bar/10",
+          "size": [
+            55,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#health",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#health > 18)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
     ]
   },
   "custom_food_panel": {
     "type": "panel",
-    "size": [ 55, 3 ],
+    "size": [
+      55,
+      3
+    ],
     "layer": 101,
     "anchor_from": "bottom_right",
     "anchor_to": "bottom_right",
-    "offset": [ 22.5, -35.5 ],
+    "offset": [
+      22.5,
+      -35.5
+    ],
     "controls": [
-      { "food_1":  { "type": "image", "texture": "textures/kingdom_hud/food_bar/1",  "size": [5,3],  "bindings": [{"binding_name":"#score_food","binding_type":"global"},{"binding_name":"(#score_food > 0 and #score_food <= 2)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "food_2":  { "type": "image", "texture": "textures/kingdom_hud/food_bar/2",  "size": [11,3], "bindings": [{"binding_name":"#score_food","binding_type":"global"},{"binding_name":"(#score_food > 2 and #score_food <= 4)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "food_3":  { "type": "image", "texture": "textures/kingdom_hud/food_bar/3",  "size": [16,3], "bindings": [{"binding_name":"#score_food","binding_type":"global"},{"binding_name":"(#score_food > 4 and #score_food <= 6)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "food_4":  { "type": "image", "texture": "textures/kingdom_hud/food_bar/4",  "size": [22,3], "bindings": [{"binding_name":"#score_food","binding_type":"global"},{"binding_name":"(#score_food > 6 and #score_food <= 8)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "food_5":  { "type": "image", "texture": "textures/kingdom_hud/food_bar/5",  "size": [27,3], "bindings": [{"binding_name":"#score_food","binding_type":"global"},{"binding_name":"(#score_food > 8 and #score_food <= 10)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "food_6":  { "type": "image", "texture": "textures/kingdom_hud/food_bar/6",  "size": [33,3], "bindings": [{"binding_name":"#score_food","binding_type":"global"},{"binding_name":"(#score_food > 10 and #score_food <= 12)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "food_7":  { "type": "image", "texture": "textures/kingdom_hud/food_bar/7",  "size": [38,3], "bindings": [{"binding_name":"#score_food","binding_type":"global"},{"binding_name":"(#score_food > 12 and #score_food <= 14)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "food_8":  { "type": "image", "texture": "textures/kingdom_hud/food_bar/8",  "size": [44,3], "bindings": [{"binding_name":"#score_food","binding_type":"global"},{"binding_name":"(#score_food > 14 and #score_food <= 16)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "food_9":  { "type": "image", "texture": "textures/kingdom_hud/food_bar/9",  "size": [49,3], "bindings": [{"binding_name":"#score_food","binding_type":"global"},{"binding_name":"(#score_food > 16 and #score_food <= 18)","binding_name_override":"#visible","binding_condition":"always"}] } },
-      { "food_10": { "type": "image", "texture": "textures/kingdom_hud/food_bar/10", "size": [55,3], "bindings": [{"binding_name":"#score_food","binding_type":"global"},{"binding_name":"(#score_food > 18)","binding_name_override":"#visible","binding_condition":"always"}] } }
+      {
+        "food_1": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/food_bar/1",
+          "size": [
+            5,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#food",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#food > 0 and #food <= 2)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "food_2": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/food_bar/2",
+          "size": [
+            11,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#food",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#food > 2 and #food <= 4)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "food_3": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/food_bar/3",
+          "size": [
+            16,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#food",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#food > 4 and #food <= 6)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "food_4": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/food_bar/4",
+          "size": [
+            22,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#food",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#food > 6 and #food <= 8)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "food_5": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/food_bar/5",
+          "size": [
+            27,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#food",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#food > 8 and #food <= 10)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "food_6": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/food_bar/6",
+          "size": [
+            33,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#food",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#food > 10 and #food <= 12)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "food_7": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/food_bar/7",
+          "size": [
+            38,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#food",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#food > 12 and #food <= 14)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "food_8": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/food_bar/8",
+          "size": [
+            44,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#food",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#food > 14 and #food <= 16)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "food_9": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/food_bar/9",
+          "size": [
+            49,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#food",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#food > 16 and #food <= 18)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "food_10": {
+          "type": "image",
+          "texture": "textures/kingdom_hud/food_bar/10",
+          "size": [
+            55,
+            3
+          ],
+          "bindings": [
+            {
+              "binding_name": "#food",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "(#food > 18)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
     ]
   },
   "hotbar_renderer": {
@@ -1951,10 +2619,10 @@
         "custom_food_bar@hud.custom_food_panel": {}
       },
       {
-        "custom_armor_bar@hud.custom_armor_panel": {}
+        "custom_food_bar@hud.custom_armor_panel": {}
       },
       {
-        "custom_air_bar@hud.custom_air_panel": {}
+        "custom_air_panel@hud.custom_air_panel": {}
       }
     ],
     "bindings": [

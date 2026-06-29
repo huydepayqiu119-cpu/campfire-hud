@@ -12,6 +12,7 @@ public class PlayerJoinListener implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         var player = event.getPlayer();
         if (!GeyserBridge.isBedrockPlayer(player)) return;
+        GeyserBridge.pushStats(player);
         PlaceholderBridge.push(player);
     }
 }

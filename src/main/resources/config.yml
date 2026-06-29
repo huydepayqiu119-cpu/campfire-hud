@@ -1,5 +1,5 @@
 sync-interval-ticks: 10
-debug: false
+debug: true
 
 messages:
   no-permission: '§cYou do not have permission to use this command.'

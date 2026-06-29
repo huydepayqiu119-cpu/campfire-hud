@@ -7,53 +7,77 @@ import org.geysermc.geyser.api.GeyserApi;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GeyserBridge {
 
     private static Method sendUpstreamPacketMethod = null;
-    private static boolean reflectionFailed = false;
+    private static boolean initialized = false;
+    private static boolean available = false;
 
     public static boolean isBedrockPlayer(Player player) {
         return GeyserApi.api().isBedrockPlayer(player.getUniqueId());
     }
 
     public static void pushStats(Player player) {
-        if (reflectionFailed) return;
-
         GeyserConnection connection = GeyserApi.api().connectionByUuid(player.getUniqueId());
         if (connection == null) return;
+
+        if (!initialized) {
+            initialized = true;
+            sendUpstreamPacketMethod = findSendMethod(connection);
+            available = sendUpstreamPacketMethod != null;
+            if (!available) {
+                CampfireHUD.getInstance().getLogger().warning(
+                    "[CampfireHUD] sendUpstreamPacket not found on " + connection.getClass().getName()
+                    + " — health/food bars may not update. Enable debug for details.");
+            } else {
+                CampfireHUD.getInstance().getLogger().info(
+                    "[CampfireHUD] Found sendUpstreamPacket on " + connection.getClass().getName());
+            }
+        }
+
+        if (!available) return;
 
         try {
             Object packet = buildUpdateAttributesPacket(player);
             if (packet == null) return;
-
-            if (sendUpstreamPacketMethod == null) {
-                sendUpstreamPacketMethod = findSendMethod(connection);
-            }
-            if (sendUpstreamPacketMethod != null) {
-                sendUpstreamPacketMethod.invoke(connection, packet);
-            }
+            sendUpstreamPacketMethod.invoke(connection, packet);
         } catch (Exception e) {
-            reflectionFailed = true;
             if (CampfireHUD.getInstance().getConfig().getBoolean("debug", false)) {
-                CampfireHUD.getInstance().getLogger().warning("GeyserBridge reflection failed: " + e.getMessage()
-                    + " — stats will rely on Geyser's built-in sync.");
+                CampfireHUD.getInstance().getLogger().warning(
+                    "[CampfireHUD] pushStats failed for " + player.getName() + ": " + e.getMessage());
             }
         }
     }
 
-    private static Method findSendMethod(GeyserConnection connection) {
-        for (Method m : connection.getClass().getMethods()) {
-            if (m.getName().equals("sendUpstreamPacket") && m.getParameterCount() == 1) {
-                m.setAccessible(true);
-                return m;
+    private static Method findSendMethod(Object target) {
+        Class<?> clazz = target.getClass();
+        while (clazz != null) {
+            for (Method m : clazz.getDeclaredMethods()) {
+                if (m.getName().equals("sendUpstreamPacket") && m.getParameterCount() == 1) {
+                    m.setAccessible(true);
+                    return m;
+                }
             }
+            for (Method m : clazz.getMethods()) {
+                if (m.getName().equals("sendUpstreamPacket") && m.getParameterCount() == 1) {
+                    m.setAccessible(true);
+                    return m;
+                }
+            }
+            clazz = clazz.getSuperclass();
         }
-        for (Method m : connection.getClass().getDeclaredMethods()) {
-            if (m.getName().equals("sendUpstreamPacket") && m.getParameterCount() == 1) {
-                m.setAccessible(true);
-                return m;
+        if (CampfireHUD.getInstance().getConfig().getBoolean("debug", false)) {
+            StringBuilder sb = new StringBuilder("[CampfireHUD] Available methods on ")
+                .append(target.getClass().getName()).append(":\n");
+            for (Method m : target.getClass().getMethods()) {
+                if (m.getName().toLowerCase().contains("send") || m.getName().toLowerCase().contains("packet")) {
+                    sb.append("  ").append(m.getName()).append("(").append(m.getParameterCount()).append(" params)\n");
+                }
             }
+            CampfireHUD.getInstance().getLogger().info(sb.toString());
         }
         return null;
     }
@@ -75,21 +99,25 @@ public class GeyserBridge {
             float  sat      = player.getSaturation();
             double armor    = Math.min(getArmorValue(player), 20.0);
 
-            java.util.List<Object> attrs = new java.util.ArrayList<>();
-            attrs.add(makeAttr(attrClass, "minecraft:health",          0f, (float) maxHp,  (float) currentHp, (float) maxHp));
-            attrs.add(makeAttr(attrClass, "minecraft:player.hunger",   0f, 20f,             food,              20f));
-            attrs.add(makeAttr(attrClass, "minecraft:player.saturation", 0f, 20f,           sat,               20f));
-            attrs.add(makeAttr(attrClass, "minecraft:armor",           0f, 30f,             (float) armor,     (float) armor));
+            List<Object> attrs = new ArrayList<>();
+            attrs.add(makeAttr(attrClass, "minecraft:health",            0f, (float) maxHp, (float) currentHp, (float) maxHp));
+            attrs.add(makeAttr(attrClass, "minecraft:player.hunger",     0f, 20f, food,      20f));
+            attrs.add(makeAttr(attrClass, "minecraft:player.saturation", 0f, 20f, sat,       20f));
+            attrs.add(makeAttr(attrClass, "minecraft:armor",             0f, 30f, (float) armor, (float) armor));
 
-            packetClass.getMethod("setAttributes", java.util.List.class).invoke(packet, attrs);
+            packetClass.getMethod("setAttributes", List.class).invoke(packet, attrs);
             return packet;
         } catch (Exception e) {
+            if (CampfireHUD.getInstance().getConfig().getBoolean("debug", false)) {
+                CampfireHUD.getInstance().getLogger().warning(
+                    "[CampfireHUD] buildPacket failed: " + e.getClass().getSimpleName() + ": " + e.getMessage());
+            }
             return null;
         }
     }
 
     private static Object makeAttr(Class<?> attrClass, String id,
-                                   float min, float max, float value, float def) throws Exception {
+                                    float min, float max, float value, float def) throws Exception {
         return attrClass.getDeclaredConstructor(String.class, float.class, float.class, float.class, float.class)
                 .newInstance(id, min, max, value, def);
     }

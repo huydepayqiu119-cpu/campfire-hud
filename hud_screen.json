@@ -58,7 +58,7 @@
         "money_text_label": {
           "type": "label",
           "layer": 102,
-          "text": "%%",
+          "text": "§6Coin",
           "shadow": true,
           "anchor_from": "center",
           "anchor_to": "center",
@@ -73,7 +73,7 @@
         "level_text_label": {
           "type": "label",
           "layer": 102,
-          "text": "%player_level%",
+          "text": "#text",
           "shadow": true,
           "anchor_from": "center",
           "anchor_to": "center",
@@ -81,7 +81,14 @@
             0,
             0
           ],
-          "font_size": "normal"
+          "font_size": "normal",
+          "bindings": [
+            {
+              "binding_name": "#level_number",
+              "binding_name_override": "#text",
+              "binding_type": "global"
+            }
+          ]
         }
       }
     ]
@@ -110,12 +117,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#armor",
+              "binding_name": "#player_armor_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#armor > 0 and #armor <= 2)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_armor_value > 0 and #player_armor_value <= 2)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -130,12 +138,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#armor",
+              "binding_name": "#player_armor_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#armor > 2 and #armor <= 4)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_armor_value > 2 and #player_armor_value <= 4)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -150,12 +159,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#armor",
+              "binding_name": "#player_armor_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#armor > 4 and #armor <= 6)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_armor_value > 4 and #player_armor_value <= 6)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -170,12 +180,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#armor",
+              "binding_name": "#player_armor_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#armor > 6 and #armor <= 8)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_armor_value > 6 and #player_armor_value <= 8)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -190,12 +201,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#armor",
+              "binding_name": "#player_armor_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#armor > 8 and #armor <= 10)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_armor_value > 8 and #player_armor_value <= 10)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -210,12 +222,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#armor",
+              "binding_name": "#player_armor_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#armor > 10 and #armor <= 12)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_armor_value > 10 and #player_armor_value <= 12)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -230,12 +243,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#armor",
+              "binding_name": "#player_armor_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#armor > 12 and #armor <= 14)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_armor_value > 12 and #player_armor_value <= 14)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -250,12 +264,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#armor",
+              "binding_name": "#player_armor_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#armor > 14 and #armor <= 16)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_armor_value > 14 and #player_armor_value <= 16)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -270,12 +285,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#armor",
+              "binding_name": "#player_armor_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#armor > 16 and #armor <= 18)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_armor_value > 16 and #player_armor_value <= 18)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -290,12 +306,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#armor",
+              "binding_name": "#player_armor_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#armor > 18)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_armor_value > 18)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -326,12 +343,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#air",
+              "binding_name": "#player_air",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#air > 0 and #air <= 2)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_air > 0 and #player_air <= 30)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -346,12 +364,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#air",
+              "binding_name": "#player_air",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#air > 2 and #air <= 4)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_air > 30 and #player_air <= 60)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -366,12 +385,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#air",
+              "binding_name": "#player_air",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#air > 4 and #air <= 6)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_air > 60 and #player_air <= 90)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -386,12 +406,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#air",
+              "binding_name": "#player_air",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#air > 6 and #air <= 8)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_air > 90 and #player_air <= 120)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -406,12 +427,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#air",
+              "binding_name": "#player_air",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#air > 8 and #air <= 10)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_air > 120 and #player_air <= 150)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -426,12 +448,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#air",
+              "binding_name": "#player_air",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#air > 10 and #air <= 12)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_air > 150 and #player_air <= 180)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -446,12 +469,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#air",
+              "binding_name": "#player_air",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#air > 12 and #air <= 14)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_air > 180 and #player_air <= 210)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -466,12 +490,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#air",
+              "binding_name": "#player_air",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#air > 14 and #air <= 16)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_air > 210 and #player_air <= 240)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -486,12 +511,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#air",
+              "binding_name": "#player_air",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#air > 16 and #air <= 18)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_air > 240 and #player_air <= 270)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -506,12 +532,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#air",
+              "binding_name": "#player_air",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#air > 18)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#player_air > 270)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -547,7 +574,8 @@
             },
             {
               "binding_name": "(#health > 0 and #health <= 2)",
-              "binding_name_override": "#visible"
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -567,7 +595,8 @@
             },
             {
               "binding_name": "(#health > 2 and #health <= 4)",
-              "binding_name_override": "#visible"
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -587,7 +616,8 @@
             },
             {
               "binding_name": "(#health > 4 and #health <= 6)",
-              "binding_name_override": "#visible"
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -607,7 +637,8 @@
             },
             {
               "binding_name": "(#health > 6 and #health <= 8)",
-              "binding_name_override": "#visible"
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -627,7 +658,8 @@
             },
             {
               "binding_name": "(#health > 8 and #health <= 10)",
-              "binding_name_override": "#visible"
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -647,7 +679,8 @@
             },
             {
               "binding_name": "(#health > 10 and #health <= 12)",
-              "binding_name_override": "#visible"
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -667,7 +700,8 @@
             },
             {
               "binding_name": "(#health > 12 and #health <= 14)",
-              "binding_name_override": "#visible"
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -687,7 +721,8 @@
             },
             {
               "binding_name": "(#health > 14 and #health <= 16)",
-              "binding_name_override": "#visible"
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -707,7 +742,8 @@
             },
             {
               "binding_name": "(#health > 16 and #health <= 18)",
-              "binding_name_override": "#visible"
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -727,7 +763,8 @@
             },
             {
               "binding_name": "(#health > 18)",
-              "binding_name_override": "#visible"
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -758,12 +795,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#food",
+              "binding_name": "#food_hunger_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#food > 0 and #food <= 2)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#food_hunger_value > 0 and #food_hunger_value <= 2)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -778,12 +816,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#food",
+              "binding_name": "#food_hunger_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#food > 2 and #food <= 4)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#food_hunger_value > 2 and #food_hunger_value <= 4)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -798,12 +837,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#food",
+              "binding_name": "#food_hunger_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#food > 4 and #food <= 6)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#food_hunger_value > 4 and #food_hunger_value <= 6)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -818,12 +858,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#food",
+              "binding_name": "#food_hunger_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#food > 6 and #food <= 8)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#food_hunger_value > 6 and #food_hunger_value <= 8)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -838,12 +879,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#food",
+              "binding_name": "#food_hunger_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#food > 8 and #food <= 10)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#food_hunger_value > 8 and #food_hunger_value <= 10)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -858,12 +900,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#food",
+              "binding_name": "#food_hunger_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#food > 10 and #food <= 12)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#food_hunger_value > 10 and #food_hunger_value <= 12)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -878,12 +921,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#food",
+              "binding_name": "#food_hunger_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#food > 12 and #food <= 14)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#food_hunger_value > 12 and #food_hunger_value <= 14)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -898,12 +942,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#food",
+              "binding_name": "#food_hunger_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#food > 14 and #food <= 16)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#food_hunger_value > 14 and #food_hunger_value <= 16)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -918,12 +963,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#food",
+              "binding_name": "#food_hunger_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#food > 16 and #food <= 18)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#food_hunger_value > 16 and #food_hunger_value <= 18)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }
@@ -938,12 +984,13 @@
           ],
           "bindings": [
             {
-              "binding_name": "#food",
+              "binding_name": "#food_hunger_value",
               "binding_type": "global"
             },
             {
-              "binding_name": "(#food > 18)",
-              "binding_name_override": "#visible"
+              "binding_name": "(#food_hunger_value > 18)",
+              "binding_name_override": "#visible",
+              "binding_condition": "always"
             }
           ]
         }

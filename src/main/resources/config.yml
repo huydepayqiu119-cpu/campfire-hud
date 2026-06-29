@@ -1,0 +1,22 @@
+sync-interval-ticks: 10
+debug: false
+
+messages:
+  no-permission: '§cYou do not have permission to use this command.'
+  reload-success: '§aCampfireHUD config reloaded successfully.'
+
+# PlaceholderAPI → Scoreboard bridge
+# Maps a score name to a PAPI placeholder.
+# The placeholder value is stripped of non-numeric characters and cast to int.
+# Use in hud_screen.json as:  { "binding_name": "#score_<name>", "binding_type": "global" }
+# Key name must be <= 10 chars (prefix "chud_" adds 5, total <= 16).
+#
+# NOTE: %vault_eco_balance_formatted% returns "1,234.56" → stored as 1234
+#       %player_level% returns "5" → stored as 5
+placeholders:
+  balance: '%vault_eco_balance%'
+  level:   '%player_level%'
+  health:  '%player_health%'
+  food:    '%player_foodlevel%'
+  armor:   '%player_armor%'
+  air:     '%player_air%'

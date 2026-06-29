@@ -1,0 +1,19 @@
+name: CampfireHUD
+version: '${project.version}'
+main: com.campfirehud.CampfireHUD
+api-version: '1.20'
+depend:
+  - Geyser-Spigot
+softdepend:
+  - PlaceholderAPI
+authors:
+  - Kaito
+commands:
+  campfirehud:
+    description: "CampfireHUD management"
+    aliases:
+      - chud
+permissions:
+  campfirehud.admin:
+    description: "Reload and manage CampfireHUD"
+    default: op

@@ -148,6 +148,9 @@ public class GeyserBridge {
             int    air       = player.getRemainingAir();
             int    maxAir    = player.getMaximumAir();
             float  airScaled = maxAir > 0 ? ((float) air / maxAir) * 300f : 300f;
+            float  xpProgress = player.getExp();
+            int    xpLevel   = player.getLevel();
+            float  xpTotal   = player.getTotalExperience();
 
             List<Object> attrs = new ArrayList<>();
             attrs.add(makeAttr(attrClass, "minecraft:health",            0f, (float) maxHp, (float) currentHp, (float) maxHp));
@@ -155,6 +158,8 @@ public class GeyserBridge {
             attrs.add(makeAttr(attrClass, "minecraft:player.saturation", 0f, 20f, sat,  20f));
             attrs.add(makeAttr(attrClass, "minecraft:armor",             0f, 30f, (float) armor, (float) armor));
             attrs.add(makeAttr(attrClass, "minecraft:player.exhaustion", 0f, 300f, airScaled, 300f));
+            attrs.add(makeAttr(attrClass, "minecraft:player.experience", 0f, 1f, xpProgress, 0f));
+            attrs.add(makeAttr(attrClass, "minecraft:player.level",      0f, 24791.0f, xpLevel, 0f));
 
             packetClass.getMethod("setAttributes", List.class).invoke(packet, attrs);
             return packet;
